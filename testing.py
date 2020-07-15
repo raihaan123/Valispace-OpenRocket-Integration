@@ -19,6 +19,6 @@ def testComponent(project, valispaceObj):
 
 def testVali(valispaceObj, parent):
     
-    test2 = vali(parent,"testVali",21)
+    test2 = vali(parent,"testVali", 21)
     test2.push(valispaceObj)
     return(valispaceObj.get_vali_list(parent_id=parent))

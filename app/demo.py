@@ -10,7 +10,7 @@ import valispace
 #import keyring
 from classes import component
 import os
-from flask import Flask
+from flask import Flask, request, render_template
 
 # Flask app
 app = Flask(__name__)
@@ -19,14 +19,21 @@ app = Flask(__name__)
 def hello():
     return "Hello from Python!"
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return do_the_login()
+    else:
+        return show_the_login_form()
+    
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
 
 
 # Connecting to the Valispace API
-# passwd = keyring.get_password('valispace','raihaan.usman19')
-# valispace = valispace.API(url='iclrocketry.valispace.com', username='raihaan.usman19', password=passwd)
+passwd = keyring.get_password('valispace','raihaan.usman19')
+valispace = valispace.API(url='iclrocketry.valispace.com', username='raihaan.usman19', password=passwd)
 
 
 # # Select project

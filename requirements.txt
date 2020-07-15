@@ -3,3 +3,5 @@ future==0.18.2
 itsdangerous==1.1.0
 valispace==0.1.16
 web.py==0.51
+flask-wtf==0.14.3
+WTForms==2.3.1

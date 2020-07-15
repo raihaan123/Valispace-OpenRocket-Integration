@@ -20,7 +20,7 @@ def index():
 def login():
     username = request.form['uname']
     #password = request.form['psw']
-    (request.form['uname'])
+    return (request.form['uname'])
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

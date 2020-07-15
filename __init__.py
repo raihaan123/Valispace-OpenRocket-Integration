@@ -5,6 +5,7 @@ Created on Wed Jul 15 12:02:40 2020
 @author: Raihaan
 """
 
+import valispace
 
 from flask import Flask, render_template, request
 import os
@@ -20,10 +21,17 @@ def index():
 def login():
     if request.method == "POST":
         
-        username = request.form['uname']
-        password = request.form['psw']
+        user = request.form['uname']
+        passwd = request.form['psw']
         
-        return render_template("success.html")
+        valispace = valispace.API(url='iclrocketry.valispace.com', username = user, password = passwd)
+        
+        project_name = 'SYSTEMS_TEST'
+
+        project = {'name':project_name, 'id':valispace.get_project_by_name(name=project_name)[0]['id']}
+        return("\nCurrently working on the",project['name'],"project (ID: "+str(project['id'])+")")
+        
+        #return render_template("success.html")
     
     return render_template("login.html")
     

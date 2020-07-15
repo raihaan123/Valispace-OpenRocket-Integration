@@ -50,5 +50,5 @@ class vali:
             "wc_plus": 0,
             "minimum": 0,
             "maximum": 0,
-            "parent": 1054
+            "parent": """+self.parent+"""
         }""")

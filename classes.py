@@ -5,6 +5,7 @@ Created on Tue Jul 14 23:54:48 2020
 @author: raihaan
 """
 
+# Component API call class
 class component:
     def __init__(self, name, parent, project):
         self.name = name
@@ -24,25 +25,28 @@ class component:
     def get(self):
         None
         
-        
+
+# Vali API call class
 class vali:
-    def __init__(self):
-        None
+    def __init__(self, parent, name, value):
+        self.parent = str(parent)
+        self.name = name
+        self.value = str(value)
     
     def push(self,valispace):
         valispace.post_data(type='vali', data="""{
             "parent": """+ self.parent +""",
-            "shortname": "mass",
+            "shortname": \""""+ self.name +"""\",
             "description": "",
-            "unit": "kg",
-            "formula": "5",
-            "minimum": null,
-            "maximum": null,
-            "margin_minus": "0",
-            "margin_plus": "0",
+            "unit": "",
+            "formula": \""""+ self.value +"""\",
+            "minimum": "",
+            "maximum": "",
+            "margin_minus": 0,
+            "margin_plus": 0,
             "uses_default_formula": false,
             "reference": "",
-            "type": null
+            "type": 0
         }""")
 
             

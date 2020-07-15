@@ -51,7 +51,7 @@ valispace = valispace.API(url='iclrocketry.valispace.com', username='raihaan.usm
 
 
 
-# tube = component("Test","null",project)
-# tube.push(valispace)
+tube = component("Test","null",project)
+tube.push(valispace)
 
 

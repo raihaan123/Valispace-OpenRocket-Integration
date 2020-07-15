@@ -36,7 +36,7 @@ def login():
         #response2 = testVali(valispaceObj, response1['id'])
         
         #return render_template("response.html", message = message, response1 = response1, response2 = response2)
-        return (render_template("response.html", message = message, response1 = response1)
+        return render_template("response.html", message = message, response1 = response1)
     
     return render_template("login.html")
     

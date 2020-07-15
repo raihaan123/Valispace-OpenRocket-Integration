@@ -34,17 +34,6 @@ class vali:
     def push(self,valispace):
         valispace.post_data(type='vali', data="""{
             "parent": """+ self.parent +""",
-            "shortname": \""""+ self.name +"""\",
-            "description": "",
-            "unit": "kg",
-            "formula": \""""+ self.value +"""\",
-            "minimum": "",
-            "maximum": "",
-            "margin_minus": 0,
-            "margin_plus": 0,
-            "uses_default_formula": false,
-            "reference": "",
-            "type": 0
+            "shortname": \""""+ self.name +"""\"
+            "formula": \""""+ self.value +"""\"
         }""")
-
-            

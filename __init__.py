@@ -38,12 +38,12 @@ def login():
         
         try:
             response2 = testVali(valispaceObj, int(response1['id']))
-        except Exception:
-            None
+        except Exception as exc:
+            response2 = "Weep... " + str(exc)
             
         
-        #return render_template("response.html", message = message, response1 = response1, response2 = response2)
-        return render_template("response.html", message = message, response1 = response1)
+        return render_template("response.html", message = message, response1 = response1, response2 = response2)
+        #return render_template("response.html", message = message, response1 = response1)
     
     return render_template("login.html")
     
@@ -51,7 +51,6 @@ def login():
 @app.route('/rest', methods=['GET','POST'])
 def listen():
     None
-
 
 
 

@@ -6,7 +6,7 @@ Created on Wed Jul 15 12:02:40 2020
 """
 
 import valispace
-
+from classes import component, vali
 from flask import Flask, render_template, request, redirect
 import os
 
@@ -31,11 +31,31 @@ def login():
         project = {'name':project_name, 'id':valispaceObj.get_project_by_name(name=project_name)[0]['id']}
         message = "\nCurrently working on the",project['name'],"project (ID: "+str(project['id'])+")"
         
+        test(project)
         
         return render_template("response.html", message = message)
     
     return render_template("login.html")
     
+
+
+
+def test(project):
+    
+    test = component("Test","null",project)
+    test.push(valispace)
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)

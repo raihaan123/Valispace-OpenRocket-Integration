@@ -16,7 +16,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def index():
-    return (render_template("index.html"))
+    return render_template("index.html")
 
 @app.route('/sign_in', methods=['GET','POST'])
 def login():
@@ -38,7 +38,7 @@ def login():
         #return render_template("response.html", message = message, response1 = response1, response2 = response2)
         return (render_template("response.html", message = message, response1 = response1)
     
-    return (render_template("login.html"))
+    return render_template("login.html")
     
 
 
@@ -50,11 +50,11 @@ def testComponent(project, valispaceObj):
     return(valispaceObj.get_component_by_name(unique_name="Test", project_name=project['name']))
 
 
-def testVali(valispaceObj, parent):
+# def testVali(valispaceObj, parent):
     
-    test = vali(parent,"testVali",21)
-    test.push(valispaceObj)
-    return(valispaceObj.get_vali_list(parent_id=parent))
+#     test = vali(parent,"testVali",21)
+#     test.push(valispaceObj)
+#     return(valispaceObj.get_vali_list(parent_id=parent))
 
 
 

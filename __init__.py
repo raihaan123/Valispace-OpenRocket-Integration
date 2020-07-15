@@ -33,7 +33,7 @@ def login():
         message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
         
         response1 = testComponent(project, valispaceObj)
-        response2 = testVali(valispaceObj, response1['id'])
+        response2 = testVali(valispaceObj, int(response1['id']))
         
         #return render_template("response.html", message = message, response1 = response1, response2 = response2)
         return render_template("response.html", message = message, response1 = response1)

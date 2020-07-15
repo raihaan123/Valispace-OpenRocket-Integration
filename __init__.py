@@ -12,15 +12,15 @@ import os
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/index')
+@app.route('/login')
 def index():
-    return render_template("send.html")
+    return render_template("login.html")
 
 @app.route('/auth', methods=['POST'])
 def login():
     username = request.form['uname']
-    #password = request.form['psw']
-    return (request.form['uname'])
+    password = request.form['psw']
+    return render_template("success.html")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

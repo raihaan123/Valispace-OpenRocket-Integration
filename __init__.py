@@ -16,7 +16,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def index():
-    return render_template("index.html")
+    return (render_template("index.html"))
 
 @app.route('/sign_in', methods=['GET','POST'])
 def login():
@@ -36,9 +36,9 @@ def login():
         #response2 = testVali(valispaceObj, response1['id'])
         
         #return render_template("response.html", message = message, response1 = response1, response2 = response2)
-        return render_template("response.html", message = message, response1 = response1['id']
+        return (render_template("response.html", message = message, response1 = response1['id'])
     
-    return render_template("login.html")
+    return (render_template("login.html"))
     
 
 

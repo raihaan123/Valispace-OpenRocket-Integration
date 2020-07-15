@@ -32,8 +32,23 @@ class vali:
         self.value = str(value)
     
     def push(self,valispace):
+        # valispace.post_data(type='vali', data="""{
+        #     "parent": """+ self.parent +""",
+        #     "shortname": \""""+ self.name +"""\,"
+        #     "formula": \""""+ self.value +"""\"
+        # }""")
+        
         valispace.post_data(type='vali', data="""{
-            "parent": """+ self.parent +""",
-            "shortname": \""""+ self.name +"""\,"
-            "formula": \""""+ self.value +"""\"
+            "shortname": "test",
+            "description": "string",
+            "reference": "string",
+            "value": 21,
+            "uses_default_formula": true,
+            "margin_plus": 0,
+            "margin_minus": 0,
+            "wc_minus": 0,
+            "wc_plus": 0,
+            "minimum": 0,
+            "maximum": 0,
+            "parent": 1054
         }""")

@@ -39,10 +39,10 @@ class vali:
         # }""")
         
         valispace.post_data(type='vali', data="""{
-            "shortname": "test",
+            "shortname": \""""+ self.name +"""\",
             "description": "string",
             "reference": "string",
-            "value": 21,
+            "value": """+self.value+""",
             "uses_default_formula": true,
             "margin_plus": 0,
             "margin_minus": 0,

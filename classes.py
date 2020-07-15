@@ -46,7 +46,7 @@ class vali:
             "margin_plus": 0,
             "uses_default_formula": false,
             "reference": "",
-            "type": 0
+            "type": null
         }""")
 
             

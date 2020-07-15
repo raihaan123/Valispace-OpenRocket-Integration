@@ -5,10 +5,10 @@ Created on Tue Jul 14 23:45:33 2020
 @author: raihaan
 """
 
-import xml.etree.ElementTree as ET
+#import xml.etree.ElementTree as ET
 import valispace
-import keyring
-from classes import component
+#import keyring
+#from classes import component
 import os
 from flask import Flask
 

@@ -43,8 +43,7 @@ def login():
 def test(project):
     
     test = component("Test","null",project)
-    test.push(valispace)
-
+    test.push(valispaceObj)
 
 
 

@@ -16,7 +16,7 @@ app = Flask(__name__)
 def index():
     return render_template("login.html")
 
-@app.route('/auth', methods=['POST'])
+@app.route('/auth', methods=['GET','POST'])
 def login():
     username = request.form['uname']
     password = request.form['psw']

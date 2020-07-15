@@ -7,7 +7,7 @@ Created on Wed Jul 15 12:02:40 2020
 
 import valispace
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import os
 
 app = Flask(__name__)
@@ -32,6 +32,7 @@ def login():
         print("\nCurrently working on the",project['name'],"project (ID: "+str(project['id'])+")")
         
         #return render_template("success.html")
+        return redirect(request.url)
     
     return render_template("login.html")
     

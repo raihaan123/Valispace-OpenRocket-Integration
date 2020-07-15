@@ -31,9 +31,9 @@ def login():
         project = {'name':project_name, 'id':valispaceObj.get_project_by_name(name=project_name)[0]['id']}
         message = "\nCurrently working on the",project['name'],"project (ID: "+str(project['id'])+")"
         
-        test(project)
+        response = test(project)
         
-        return render_template("response.html", message = message)
+        return render_template("response.html", message = message, response = response)
     
     return render_template("login.html")
     
@@ -42,9 +42,9 @@ def login():
 
 def test(project):
     
-    test = component("Test","null",project)
+    test = component("Test","null",project['id'])
     test.push(valispaceObj)
-
+    return(valispace.get_component_by_name(unique_name="Test", project_name=project['name']))
 
 
 

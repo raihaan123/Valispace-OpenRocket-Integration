@@ -29,7 +29,7 @@ def login():
         project_name = 'SYSTEMS_TEST'
 
         project = {'name':project_name, 'id':valispace.get_project_by_name(name=project_name)[0]['id']}
-        return("\nCurrently working on the",project['name'],"project (ID: "+str(project['id'])+")")
+        print("\nCurrently working on the",project['name'],"project (ID: "+str(project['id'])+")")
         
         #return render_template("success.html")
     

@@ -2,7 +2,7 @@
 """
 Created on Tue Jul 14 23:54:48 2020
 
-@author: raihaan
+@author: Raihaan
 """
 
 # Component API call class
@@ -21,9 +21,7 @@ class component:
             "tags": []
         }""")
         return(valispace.get_component_by_name(unique_name=self.name,project_name=project['name'])['id'])
-        
-    def get(self):
-        None
+
         
 
 # Vali API call class
@@ -38,7 +36,7 @@ class vali:
             "parent": """+ self.parent +""",
             "shortname": \""""+ self.name +"""\",
             "description": "",
-            "unit": "",
+            "unit": "kg",
             "formula": \""""+ self.value +"""\",
             "minimum": "",
             "maximum": "",

@@ -6,8 +6,8 @@ Created on Wed Jul 15 12:02:40 2020
 """
 
 import valispace
-from classes import component, vali
 from flask import Flask, render_template, request, redirect
+from testing import *
 import os
 
 # Instantiate a Flask server
@@ -16,10 +16,12 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def index():
+    
     return render_template("index.html")
 
 @app.route('/sign_in', methods=['GET','POST'])
 def login():
+    
     if request.method == "POST":
         
         user = request.form['uname']
@@ -33,7 +35,12 @@ def login():
         message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
         
         response1 = testComponent(project, valispaceObj)
-        response2 = testVali(valispaceObj, int(response1['id']))
+        
+        try:
+            response2 = testVali(valispaceObj, int(response1['id']))
+        except Exception:
+            None
+            
         
         #return render_template("response.html", message = message, response1 = response1, response2 = response2)
         return render_template("response.html", message = message, response1 = response1)
@@ -41,20 +48,9 @@ def login():
     return render_template("login.html")
     
 
-
-
-def testComponent(project, valispaceObj):
-    
-    test = component("Test", "null", project)
-    test.push(valispaceObj, project)
-    return(valispaceObj.get_component_by_name(unique_name="Test", project_name=project['name']))
-
-
-def testVali(valispaceObj, parent):
-    
-    test = vali(parent,"testVali",21)
-    test.push(valispaceObj)
-    return(valispaceObj.get_vali_list(parent_id=parent))
+@app.route('/rest', methods=['GET','POST'])
+def listen():
+    None
 
 
 

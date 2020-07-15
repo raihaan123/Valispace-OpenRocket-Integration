@@ -11,7 +11,7 @@ class component:
         self.parent = parent
         self.project = project['id']
     
-    def push(self, valispace,project):
+    def push(self, valispace, project):
         valispace.post_data(type='component', data="""{
             "name": \""""+ self.name +"""\",
             "description": "",

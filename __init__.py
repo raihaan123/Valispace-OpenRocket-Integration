@@ -42,8 +42,8 @@ def login():
 
 def test(project):
     
-    test = component("Test","null",project['id'])
-    test.push(valispaceObj)
+    test = component("Test", "null", project)
+    test.push(valispaceObj,project)
     return(valispaceObj.get_component_by_name(unique_name="Test", project_name=project['name']))
 
 

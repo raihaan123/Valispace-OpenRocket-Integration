@@ -33,10 +33,10 @@ def login():
         message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
         
         response1 = testComponent(project, valispaceObj)
-        #response2 = testVali(valispaceObj, response1['id'])
+        response2 = testVali(valispaceObj, response1['id'])
         
         #return render_template("response.html", message = message, response1 = response1, response2 = response2)
-        return render_template("response.html", message = message, response1 = response1['id'])
+        return render_template("response.html", message = message, response1 = response1)
     
     return render_template("login.html")
     
@@ -50,11 +50,11 @@ def testComponent(project, valispaceObj):
     return(valispaceObj.get_component_by_name(unique_name="Test", project_name=project['name']))
 
 
-# def testVali(valispaceObj, parent):
+def testVali(valispaceObj, parent):
     
-#     test = vali(parent,"testVali",21)
-#     test.push(valispaceObj)
-#     return(valispaceObj.get_vali_list(parent_id=parent))
+    test = vali(parent,"testVali",21)
+    test.push(valispaceObj)
+    return(valispaceObj.get_vali_list(parent_id=parent))
 
 
 

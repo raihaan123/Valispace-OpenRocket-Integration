@@ -10,7 +10,7 @@ import valispace
 from flask import Flask, render_template, request, redirect
 #from testing import *
 import os
-from globalV import vs
+import globalV
 
 # Instantiate a Flask server
 app = Flask(__name__)
@@ -28,7 +28,7 @@ def login():
         user = request.form['uname']
         passwd = request.form['psw']
         
-        vs = valispace.API(url='iclrocketry.valispace.com', username = user, password = passwd)
+        globalV.vs = valispace.API(url='iclrocketry.valispace.com', username = user, password = passwd)
         #valispaceObj = valispace.API(url='iclrocketry.valispace.com', username = user, password = passwd)
         
         return redirect('/success')
@@ -40,7 +40,7 @@ def success():
     
         project_name = 'SYSTEMS_TEST'
 
-        project = {'name':project_name, 'id':vs.get_project_by_name(name=project_name)[0]['id']}
+        project = {'name':project_name, 'id':globalV.vs.get_project_by_name(name=project_name)[0]['id']}
         message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
         
         # Testing code - remove!

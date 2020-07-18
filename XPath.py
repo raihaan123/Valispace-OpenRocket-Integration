@@ -9,11 +9,10 @@ Created on Thu Jul 16 12:42:49 2020
 
 import xml.etree.ElementTree as ET
 from classes import component, vali, textvali
-from globalV import vs
 import urllib
 
 # Initialise the XML structure, push the main component
-def unpack(project, url):
+def unpack(project, url, vs):
     
     tree = ET.parse(urllib.request.urlopen(url, data=None,))
     root = tree.getroot()[1][0]
@@ -27,11 +26,11 @@ def unpack(project, url):
 
     # Ready for pushing to Valispace
     for child in root[27]:
-        pusher(child, parent, project)
+        pusher(child, parent, project, vs)
     
 
 
-def pusher(child, parent, project):
+def pusher(child, parent, project, vs):
     subparts = 0
     name = child.findall('Name')[0]
     child.tag = name.text

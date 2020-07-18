@@ -46,7 +46,7 @@ def success():
         
         # Run the initial push routine
         url = 'https://raw.githubusercontent.com/icl-rocketry/The-Complete-Final-Absolute-Sporadic-Impusle/master/test.rkt'
-        XPath.unpack(project=int(project['id']), url=url)
+        XPath.unpack(project=int(project['id']), url=url, vs=globalV.vs)
         
         # Testing code - remove!
         # response1 = testComponent(project, vs)

@@ -11,9 +11,11 @@ import xml.etree.ElementTree as ET
 from classes import component, vali, textvali
 from globalV import vs
 
+# Initialise the XML structure, push the main component
 def unpack(project):
 
-    tree = ET.parse('The_Sporadic_Impulse.rkt')
+    #tree = ET.parse('https://raw.githubusercontent.com/icl-rocketry/The-Complete-Final-Absolute-Sporadic-Impusle/master/The_Sporadic_Impulse.rkt')
+    tree = ET.parse('https://raw.githubusercontent.com/icl-rocketry/The-Complete-Final-Absolute-Sporadic-Impusle/master/test.rkt')
     root = tree.getroot()[1][0]
     
     # Adjusting the names
@@ -27,7 +29,6 @@ def unpack(project):
     for child in root[27]:
         pusher(child, parent, project)
     
-    
 
 
 def pusher(child, parent, project):
@@ -36,13 +37,15 @@ def pusher(child, parent, project):
     child.tag = name.text
     child.remove(name)
 
-    print(child.tag)
+    #DEBUG
+    #print(child.tag)
     
     # Instantiate the component object
     comp = component(child.tag, parent, project)
     uid = comp.push(vs)
     
     for baby in child:
+        
         if baby.tag == "AttachedParts":
             baby.text = None
             
@@ -70,12 +73,12 @@ def pusher(child, parent, project):
     
     if subparts == 1:
         for i in range(0, len(temp)):
+            
             pusher(temp[i], uid, project)
 
 
 # BOOM
-
-unpack(project=28)
+#unpack(project=28)
 
 
     

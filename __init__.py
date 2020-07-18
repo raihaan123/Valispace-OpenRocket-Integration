@@ -40,7 +40,7 @@ def success():
     
         project_name = 'SYSTEMS_TEST'
 
-        project = {'name':psroject_name, 'id':valispaceObj.get_project_by_name(name=project_name)[0]['id']}
+        project = {'name':project_name, 'id':vs.get_project_by_name(name=project_name)[0]['id']}
         message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
         
         # Testing code - remove!
@@ -52,7 +52,7 @@ def success():
         #     response2 = "Weep... " + str(exc)
             
         
-        return render_template("response.html", message = message)
+        return render_template("response.html", message = message, response1 = "Success!", response2 = "Lol")
 
     
 

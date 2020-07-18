@@ -7,7 +7,7 @@ Created on Wed Jul 15 12:02:40 2020
 
 # Additional libraries
 import valispace
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 #from testing import *
 import os
 import globalV
@@ -43,11 +43,20 @@ def success():
         project_name = 'SYSTEMS_TEST'
 
         project = {'name':project_name, 'id':globalV.vs.get_project_by_name(name=project_name)[0]['id']}
-        message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
+        #message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
         
         # Run the initial push routine
         url = 'https://raw.githubusercontent.com/icl-rocketry/The-Complete-Final-Absolute-Sporadic-Impusle/master/test.rkt'
-        XPath.unpack(project=int(project['id']), url=url, vs=globalV.vs)
+        
+        
+        thread = Thread(target=XPath.unpack, args=(int(project['id']), url, globalV.vs))
+        thread.daemon = True
+        thread.start()
+        return jsonify({'thread_name': str(thread.name),
+                        'started': True})
+        
+        
+        #XPath.unpack(project=int(project['id']), url=url, vs=globalV.vs)
         
         # Testing code - remove!
         # response1 = testComponent(project, vs)
@@ -58,7 +67,7 @@ def success():
         #     response2 = "Weep... " + str(exc)
             
         
-        return render_template("response.html", message = message, response1 = "Success!", response2 = "Lol")
+        #return render_template("response.html", message = message, response1 = "Success!", response2 = "Lol")
 
     
 

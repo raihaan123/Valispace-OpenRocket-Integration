@@ -2,7 +2,7 @@
     <FileVersion>4</FileVersion>
     <DesignInformation>
         <RocketDesign>
-            <Name>Rocket</Name>
+            <Name>Starship</Name>
             <StageCount>1</StageCount>
             <DisplayFlags>7</DisplayFlags>
             <ViewType>0</ViewType>
@@ -34,7 +34,7 @@
                     <KnownMass>20.406136641183203</KnownMass>
                     <Density>680.0</Density>
                     <Material>Cardboard</Material>
-                    <Name>Nose cone</Name>
+                    <Name>Nose Cone</Name>
                     <KnownCG>0.0</KnownCG>
                     <UseKnownCG>0</UseKnownCG>
                     <Xb>0.0</Xb>
@@ -60,7 +60,7 @@
                     <KnownMass>41.016633685268374</KnownMass>
                     <Density>680.0</Density>
                     <Material>Cardboard</Material>
-                    <Name>Body tube</Name>
+                    <Name>Top Body tube</Name>
                     <KnownCG>0.0</KnownCG>
                     <UseKnownCG>0</UseKnownCG>
                     <Xb>0.0</Xb>
@@ -160,7 +160,7 @@
                     <KnownMass>41.016633685268374</KnownMass>
                     <Density>680.0</Density>
                     <Material>Cardboard</Material>
-                    <Name>Body tube</Name>
+                    <Name>Aft Body tube</Name>
                     <KnownCG>0.0</KnownCG>
                     <UseKnownCG>0</UseKnownCG>
                     <Xb>0.0</Xb>

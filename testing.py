@@ -5,7 +5,7 @@ Created on Wed Jul 15 21:48:40 2020
 @author: Raihaan
 """
 
-from classes import component, vali
+from classes import component, vali, textvali
 
 
 # Testing modules, only for reference

@@ -32,6 +32,8 @@ def login():
         #valispaceObj = valispace.API(url='iclrocketry.valispace.com', username = user, password = passwd)
         
         return redirect('/success')
+    return render_template("login.html")
+
 
 @app.route('/success')    
 def success():
@@ -51,8 +53,7 @@ def success():
             
         
         return render_template("response.html", message = message)
-    
-    return render_template("login.html")
+
     
 
 # @app.route('/rest/OR', methods=['GET','POST'])

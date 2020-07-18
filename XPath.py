@@ -10,12 +10,12 @@ Created on Thu Jul 16 12:42:49 2020
 import xml.etree.ElementTree as ET
 from classes import component, vali, textvali
 from globalV import vs
+import urllib
 
 # Initialise the XML structure, push the main component
-def unpack(project):
-
-    #tree = ET.parse('https://raw.githubusercontent.com/icl-rocketry/The-Complete-Final-Absolute-Sporadic-Impusle/master/The_Sporadic_Impulse.rkt')
-    tree = ET.parse('https://raw.githubusercontent.com/icl-rocketry/The-Complete-Final-Absolute-Sporadic-Impusle/master/test.rkt')
+def unpack(project, url):
+    
+    tree = ET.parse(urllib.request.urlopen(url, data=None,))
     root = tree.getroot()[1][0]
     
     # Adjusting the names

@@ -10,8 +10,10 @@ Created on Thu Jul 16 12:42:49 2020
 import xml.etree.ElementTree as ET
 from classes import component, vali, textvali
 import urllib
+from uwsgidecorators import thread
 
 # Initialise the XML structure, push the main component
+@thread
 def unpack(project, url, vs):
     
     tree = ET.parse(urllib.request.urlopen(url, data=None,))
@@ -73,7 +75,7 @@ def pusher(child, parent, project, vs):
     if subparts == 1:
         for i in range(0, len(temp)):
             
-            pusher(temp[i], uid, project)
+            pusher(temp[i], uid, project, vs)
 
 
 # BOOM

@@ -11,6 +11,7 @@ from flask import Flask, render_template, request, redirect
 #from testing import *
 import os
 import globalV
+import XPath
 
 # Instantiate a Flask server
 app = Flask(__name__)
@@ -42,6 +43,9 @@ def success():
 
         project = {'name':project_name, 'id':globalV.vs.get_project_by_name(name=project_name)[0]['id']}
         message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
+        
+        # Run the initial push routine
+        XPath.unpack(project=int(project['id']))
         
         # Testing code - remove!
         # response1 = testComponent(project, vs)

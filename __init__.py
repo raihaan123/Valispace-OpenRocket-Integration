@@ -73,10 +73,10 @@ def success():
 
     
 
-# @app.route('/rest/OR', methods=['GET','POST'])
-# def listen():
+@app.route('/rest/OR', methods=['GET','POST'])
+def listen():
     
-#     if requesr.method == "POST":
+    if request.method == "POST":
         
         
 

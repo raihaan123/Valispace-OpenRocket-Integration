@@ -43,7 +43,7 @@ def success():
         project_name = 'SYSTEMS_TEST'
 
         project = {'name':project_name, 'id':globalV.vs.get_project_by_name(name=project_name)[0]['id']}
-        #message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
+        message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
         
         # Run the initial push routine
         url = 'https://raw.githubusercontent.com/icl-rocketry/The-Complete-Final-Absolute-Sporadic-Impusle/master/test.rkt'
@@ -52,8 +52,10 @@ def success():
         thread = Thread(target=XPath.unpack, args=(int(project['id']), url, globalV.vs))
         thread.daemon = True
         thread.start()
-        return jsonify({'thread_name': str(thread.name),
-                        'started': True})
+        # return jsonify({'thread_name': str(thread.name),
+        #                 'started': True})
+    
+        return render_template("response.html", message = message, response1 = "This will look nicer...", response2 = "Things are happing in Valispace rn, go check it out!")
         
         
         #XPath.unpack(project=int(project['id']), url=url, vs=globalV.vs)

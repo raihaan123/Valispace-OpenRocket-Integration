@@ -73,10 +73,10 @@ def success():
 
     
 
-@app.route('/rest/OR', methods=['GET','POST'])
-def listen():
+# @app.route('/rest/OR', methods=['GET','POST'])
+# def listen():
     
-    if request.method == "POST":
+#     if request.method == "POST":
         
         
 
@@ -85,5 +85,6 @@ def listen():
 
 # Start webserver on PaaS provider
 if __name__ == "__main__":
+
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)

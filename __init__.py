@@ -40,7 +40,7 @@ def login():
 @app.route('/success')    
 def success():
     
-        project_name = 'SYSTEMS_TEST'
+        project_name = 'Sporadic_Impulse_COTS2020'
 
         project = {'name':project_name, 'id':globalV.vs.get_project_by_name(name=project_name)[0]['id']}
         message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"

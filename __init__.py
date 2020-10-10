@@ -46,7 +46,7 @@ def success():
         message = "Currently working on the "+project['name']+" project (ID: "+str(project['id'])+")"
         
         # Run the initial push routine
-        url = 'https://raw.githubusercontent.com/icl-rocketry/The-Complete-Final-Absolute-Sporadic-Impusle/master/test.rkt'
+        url = 'https://raw.githubusercontent.com/icl-rocketry/The-Complete-Final-Absolute-Sporadic-Impusle/master/The_Sporadic_Impulse_COTS.rkt'
         
         
         thread = Thread(target=XPath.unpack, args=(int(project['id']), url, globalV.vs))

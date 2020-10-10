@@ -25,7 +25,7 @@ class component:
             ]
         }""")
             
-        return(valispace.get_component_by_name(unique_name = self.name, project_name = "SYSTEMS_TEST")['id'])
+        return(valispace.get_component_by_name(unique_name = self.name, project_name = "Sporadic_Impulse_COTS2020")['id'])
 
         
 

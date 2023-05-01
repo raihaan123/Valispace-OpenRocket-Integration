@@ -1,4 +1,4 @@
-Flask==1.1.2
+Flask==2.3.2
 future==0.18.2
 itsdangerous==1.1.0
 valispace==0.1.16
